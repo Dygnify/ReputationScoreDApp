@@ -1,0 +1,31 @@
+.video-backgound-star-modal {
+	position: absolute;
+	background-color: transparent;
+	color: rgb(26, 25, 25);
+	border-radius: 15px;
+	width: 55%;
+	height: 50%;
+	top: 17%;
+}
+
+/* Responsiveness */
+@media screen and (max-width: 1024px) {
+	.video-backgound-star-modal {
+		width: 70%;
+		height: 60%;
+		top: 20%;
+	}
+}
+@media screen and (max-width: 768px) {
+	.video-backgound-star-modal {
+		width: 90%;
+		height: 70%;
+		top: 25%;
+	}
+}
+@media screen and (max-width: 520px) {
+	.video-backgound-star-modal {
+		height: 80%;
+		top: 30%;
+	}
+}

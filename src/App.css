@@ -1,12 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Jost:wght@300&family=Piazzolla:opsz,wght@8..30,200;8..30,300;8..30,400&family=Roboto:wght@300&family=Zen+Kurenaido&display=swap");
+
 body {
 	margin: 0;
 	padding: 0;
 	font-family: "Jost", sans-serif;
+	box-sizing: border-box;
+}
+.blockpass-package-star-modal::-webkit-scrollbar,
+body::-webkit-scrollbar {
+	display: none;
 }
 
-header {
+/* Hide scrollbar for IE, Edge and Firefox */
+.blockpass-package-star-modal,
+body {
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}
+.reputation-header {
 	padding: 0.5rem 2.5rem;
 	position: relative;
+	padding-bottom: 0px;
+}
+
+.reputation-header img {
+	margin: -10px 0;
+	width: 7rem;
+	cursor: pointer;
 }
 
 .header-button {
@@ -18,153 +38,33 @@ header {
 main {
 	padding: 0.5rem 2.5rem;
 	font-family: "Jost", sans-serif;
+	box-sizing: border-box;
 }
-
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Jost:wght@300&family=Piazzolla:opsz,wght@8..30,200;8..30,300;8..30,400&family=Roboto:wght@300&family=Zen+Kurenaido&display=swap");
 
 .reputation-body {
 	display: flex;
 	gap: 1.5rem;
 }
 
-.reputation-header{
-	padding-bottom:0px;
-}
-
-.reputation-header img {
-	margin: -10px 0;
-	width: 7rem;
-	cursor: pointer;
-}
-
-
-.blockpass-package-star-modal {
-	position: absolute;
-	top: 15%;
-	padding: 20px;
-	background-color: #f8f9fa;
-	color: rgb(26, 25, 25);
-	border-radius: 15px;
-	box-shadow: inset -1px -1px 1px rgba(185, 185, 185, 0.1);
-}
-
-.video-backgound-star-modal {
-	position: absolute;
-	background-color: transparent;
-	color: rgb(26, 25, 25);
-	border-radius: 15px;
-	/* border: 2px solid red; */
-
-}
-
-.info-modal {
-	position: absolute;
-	padding: 1rem;
-	width: 30%;
-	height: 25%;
-	background-color: white;
-	color: rgb(26, 25, 25);
-	border-radius: 15px;
-	/* border: 2px solid rgb(166, 166, 166); */
-}
-
-.info-modal-close {
-	padding: 0.5rem 0.5rem 0.1rem 0.5rem;
-}
-
-.info-modal-close:hover {
-	background: rgba(70, 70, 70, 0.206);
-	padding: 0.5rem 0.5rem 0.1rem 0.5rem;
-	border-radius: 5px;
-}
-
-.info-modal-msg {
-	width: 100%;
-	height: 60%;
-	/* border: 2px solid rgb(166, 166, 166); */
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-}
-
-.info-modal-btn {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-}
-
-.info-modal-header {
-	display: flex;
-	justify-content: end;
-	/* border: 2px solid rgb(166, 166, 166); */
-
-}
-
-.info-loader-box {
-	display: flex;
-	align-items: center;
-	gap: 1rem;
-}
-
-.info-loader {
-	border: 5px solid #cbcbcb;
-	border-radius: 50%;
-	border-top: 5px solid #33c570;
-	width: 20px;
-	height: 20px;
-	-webkit-animation: info-spin 1s linear infinite;
-	animation: info-spin 1s linear infinite;
-}
-
-/* Safari */
-@-webkit-keyframes info-spin {
-	0% {
-		-webkit-transform: rotate(0deg);
-	}
-
-	100% {
-		-webkit-transform: rotate(360deg);
-	}
-}
-
-@keyframes info-spin {
-	0% {
-		transform: rotate(0deg);
-	}
-
-	100% {
-		transform: rotate(360deg);
-	}
-}
-
-
-.blockpass-package-modal-header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	border-bottom: 1px solid #282c3a;
-}
-
 .blockpass-package-modal-title {
+	text-shadow: 3px 4px 5px #9e9e9eaf;
 	color: rgba(50, 58, 70, 1);
 	display: flex;
 	align-items: flex-end;
 	font-size: 23px;
+	margin: 0;
 }
 
 .blockpass-package-modal-close {
-	height: 2rem;
 	border: 0;
 	border-radius: 5px;
 	margin: 0;
-	padding: 5px 10px;
+	padding: 0.5rem 0.5rem 0.1rem 0.5rem;
 	color: black;
 }
 
 .blockpass-package-modal-close:hover {
-	background-color: rgba(224, 229, 243, 0.555);
+	background: rgba(145, 144, 144, 0.206);
 }
 
 .blockpass-package-flex-center {
@@ -176,10 +76,7 @@ main {
 .blockpass-package-my-blur {
 	filter: blur(5px);
 	-webkit-filter: blur(5px);
-
 }
-
-
 
 .video-my-blur {
 	position: fixed;
@@ -413,7 +310,7 @@ main {
 	gap: 1rem;
 }
 
-.space-y-4> :not([hidden])~ :not([hidden]) {
+.space-y-4 > :not([hidden]) ~ :not([hidden]) {
 	--tw-space-y-reverse: 0;
 	margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
 	margin-bottom: calc(1rem * var(--tw-space-y-reverse));
@@ -477,14 +374,17 @@ main {
 	font-size: 25px;
 }
 
-
 .blur-sm {
 	--tw-blur: blur(4px);
-	filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+	filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+		var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
+		var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .filter {
-	filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+	filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+		var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
+		var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .bg-slate-500 {
@@ -495,8 +395,6 @@ main {
 .text-center {
 	text-align: center;
 }
-
-
 
 .blockpass-package-macro-wallet-status {
 	display: flex;
@@ -535,16 +433,9 @@ main {
 	padding-left: 5px;
 }
 
-.blockpass-package-wallet-connect {
+.connected-wallet-id {
 	color: gray;
 	text-decoration: underline;
-}
-
-/*Macro Score*/
-
-
-.blockpass-package-macro-wallet-card-container {
-	padding: 1rem;
 }
 
 .blockpass-package-graph-info {
@@ -560,9 +451,12 @@ main {
 }
 
 .blockpass-package-macro-wallet-card {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-gap: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+	/* grid-template-columns: 1fr 1fr;
+	grid-gap: 1rem; */
 }
 
 .blockpass-package-graph-card {
@@ -595,46 +489,40 @@ main {
 .blockpass-package-gray-header {
 	color: rgba(50, 58, 70, 1);
 	margin: 0;
-}
-
-.blockpass-package-go-back-button {
-	width: 170px;
-	padding: 8px 16px;
-	border: none;
-	font-size: 16px;
-	line-height: 23px;
-	color: rgba(100, 116, 139, 1);
-	font-weight: 600;
-	background: transparent;
+	text-shadow: 3px 4px 5px #9e9e9eaf;
 }
 
 .blockpass-package-macro-wallet-status,
 .blockpass-package-macro-wallet-card-container,
-.bottom-buttons, .qrcode-container,.blockpass-package-right-side {
+.bottom-buttons,
+.qrcode-container,
+.blockpass-package-right-side {
 	border-radius: 8px;
 	border: 1px solid rgb(207, 224, 219);
 	padding: 1rem;
 }
-.qrcode-container{
-	
+.qrcode-container {
 	display: flex;
 	flex-direction: column;
 }
-.qrcode-container h3{
-	margin:0;
+.qrcode-container h3 {
+	margin: 0;
 	margin-bottom: 10px;
 }
-.qrcode-container img{
-	width:250px;
+.qrcode-container img {
+	width: 250px;
 	height: 250px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+		rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 }
 
 .repu-card {
-	background: linear-gradient(302.85deg,
-			rgba(42, 189, 145, 0) -1.23%,
-			rgba(42, 189, 145, 0.192) 99.99%,
-			rgba(42, 189, 145, 0.8) 100%);
+	background: linear-gradient(
+		302.85deg,
+		rgba(42, 189, 145, 0) -1.23%,
+		rgba(42, 189, 145, 0.192) 99.99%,
+		rgba(42, 189, 145, 0.8) 100%
+	);
 	margin-top: 1rem;
 	padding: 1rem;
 	box-shadow: inset -1px -1px 1px rgba(185, 185, 185, 0.1);
@@ -643,6 +531,12 @@ main {
 
 .button-group {
 	gap: 1rem;
+}
+.blockpass-package-left-side {
+	width: 70%;
+}
+.blockpass-package-right-side {
+	width: 30%;
 }
 
 .blockpass-package-right-side p {
@@ -660,7 +554,106 @@ main {
 	font-weight: 600;
 }
 
-.bottom-button-group {
-	display: flex;
-	justify-content: center;
+.upper-button {
+	width: 170px;
+}
+.bottom-button {
+	width: 35%;
+	border: 2px solid red;
+}
+
+/*
+  ---------------------- 
+      Responsiveness
+  ----------------------
+*/
+@media screen and (max-width: 1040px) {
+	.bottom-buttons {
+		display: flex;
+		flex-direction: column;
+	}
+	.bottom-button {
+		width: 50%;
+	}
+}
+@media screen and (max-width: 969px) {
+	.blockpass-package-macro-wallet-card {
+		flex-direction: column;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	main {
+		padding: 0.5rem 1.5rem;
+	}
+
+	.bottom-buttons {
+		display: flex;
+		flex-direction: row;
+	}
+	.blockpass-package-right-side {
+		display: none;
+	}
+	.blockpass-package-left-side {
+		width: 100%;
+	}
+	.bottom-button {
+		width: 35%;
+	}
+	.blockpass-package-macro-wallet-card {
+		flex-direction: row;
+	}
+}
+@media screen and (max-width: 665px) {
+	.blockpass-package-macro-wallet-card {
+		flex-direction: column;
+	}
+	.bottom-buttons {
+		flex-direction: column;
+	}
+	.bottom-button {
+		width: 50%;
+	}
+}
+
+@media screen and (max-width: 520px) {
+	.reputation-header {
+		padding: 0.5rem 0.1rem;
+	}
+
+	main {
+		padding: 0.5rem 0.5rem;
+	}
+	.reputation-body {
+		width: 100%;
+		flex-direction: column;
+		gap: 0;
+	}
+	.upper-buttons {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.bottom-button {
+		width: 70%;
+	}
+	.repu-card {
+		padding: 1rem;
+		border-radius: 8px;
+	}
+	.connected-wallet-info{
+		width:350px;
+		overflow: hidden;
+	}
+	.connected-wallet-id{
+		overflow: hidden;
+		text-overflow:ellipsis;
+		white-space: nowrap;
+	}
+}
+
+@media screen and (max-width: 350px) {
+	.bottom-button {
+		width: 80%;
+	}
 }

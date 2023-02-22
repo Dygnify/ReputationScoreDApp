@@ -90,6 +90,12 @@
 		transform: scale(1);
 	}
 }
-/* ENTRANCE ANIMATION OF THE PLAY BUTTON */
 
-/* ROJO POGI PLAY BUTTON */
+/* responsiveness  */
+
+/* small device */
+@media screen and (max-width: 520px) {
+	.play-button-container{
+    right: 1.6rem;
+}
+}

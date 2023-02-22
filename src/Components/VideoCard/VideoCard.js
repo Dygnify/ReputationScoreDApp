@@ -1,6 +1,6 @@
 import React from "react";
 import { Player } from "@livepeer/react";
-import "../../App.css";
+import './VideCard.css';
 
 const playbackId = "a44c3m96nbh5xmqr";
 
@@ -9,11 +9,6 @@ const VideoCard = ({ setIsVideoOpen }) => {
 		<div className="video-my-blur">
 			<div
 				className="video-backgound-star-modal"
-				style={{
-					width: "55%",
-					height: "50%",
-					top: "17%",
-				}}
 			>
 				<div>
 					<label

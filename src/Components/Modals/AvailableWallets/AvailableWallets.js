@@ -36,12 +36,6 @@ const AvailableWallets = ({
 		<div className="video-my-blur">
 			<div
 				className="blockpass-package-star-modal"
-				style={{
-					width: "55%",
-					top: "25%",
-					left: "20%",
-					border: "1px solid gray",
-				}}
 			>
 				<div className="blockpass-package-modal-header">
 					<h3 className="blockpass-package-modal-title">

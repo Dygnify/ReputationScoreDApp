@@ -6,7 +6,7 @@ const PlayButton = ({onClick}) => {
 		<div className="play-button-container">
 			<a
 				id="play-video"
-				class="video-play-button"
+				className="video-play-button"
 				href="#"
                 onClick={onClick}
 			>

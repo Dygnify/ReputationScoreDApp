@@ -1,9 +1,7 @@
 import React from "react";
-import { Player } from "@livepeer/react";
-import "../../App.css";
-import Button from "../Button/Button";
-import Loader from "../Loader/Loader";
-const playbackId = "a44c3m96nbh5xmqr";
+import Button from "../../Button/Button";
+import "../../../App.css";
+import './InfoModal.css';
 
 const InfoModal = ({ setIsModal, isInfoModalMsg, setIsInfoModalMsg }) => {
 	return (
@@ -41,12 +39,13 @@ const InfoModal = ({ setIsModal, isInfoModalMsg, setIsInfoModalMsg }) => {
 					)}
 					{isInfoModalMsg !== "" && <h3>{isInfoModalMsg}</h3>}
 				</div>
-				<div className="info-modal-btn">
+				<div className="info-modal-btn-container">
 					<Button
 						onClick={() => {
 							setIsModal(false);
 							setIsInfoModalMsg("");
 						}}
+						className='info-modal-btn'
 					>
 						Close
 					</Button>

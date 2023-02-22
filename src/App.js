@@ -8,7 +8,7 @@ import VideoCard from "./Components/VideoCard/VideoCard";
 import PlayButton from "./Components/Button/PlayButton";
 import { getCreditScore } from "./services/data-points";
 import { mintNFC } from "./services/nfcConnector";
-import InfoModal from "./Components/Modals/InfoModal";
+import InfoModal from "./Components/Modals/InfoModal/InfoModal";
 import karma_score from "./Images/karma_score.png";
 import { QRCode } from "react-qr-svg";
 
@@ -141,13 +141,6 @@ function App() {
 		}
 	};
 
-	// if (isLoader) {
-	// 	setTimeout(() => {
-	// 		setIsLoader(false);
-	// 		setLoaderDisplayed(true);
-	// 	}, 7000);
-	// }
-
 	useEffect(() => {
 		for (let wallet of availableWallets) {
 			if (wallet.selected === true) {
@@ -166,9 +159,7 @@ function App() {
 		setIsLoader(true);
 		setoffChainScore(713);
 		let score = await getCreditScore(
-			
 			"0xdad4c11e8cc6a5c37808d3b31b3b284809f702d1"
-		
 		);
 		setOnChainScore(score);
 	};
@@ -193,7 +184,7 @@ function App() {
 						: ""
 				} reputation-body`}
 			>
-				<section style={{ width: "70%" }}>
+				<section className="blockpass-package-left-side">
 					<section className="repu-card blockpass-package-macro-wallet-status">
 						{!selected && (
 							<div className="status-info">
@@ -202,14 +193,14 @@ function App() {
 									alt=""
 									className="blockpass-package-default-logo"
 								/>
-								<p>
+								<p className="connected-wallet-info">
 									<span>Wallet not connected</span>
 									<span
 										onClick={() =>
 											setAvailableWalletModalOpen(true)
 										}
 										style={{ cursor: "pointer" }}
-										className="blockpass-package-wallet-connect"
+										className="connected-wallet-id"
 									>
 										Connect wallet
 									</span>
@@ -225,9 +216,9 @@ function App() {
 										alt=""
 										className="blockpass-package-default-logo"
 									/>
-									<p>
+									<p className="connected-wallet-info">
 										<span>{wallet.name}</span>
-										<span className="blockpass-package-wallet-connect">
+										<span className="connected-wallet-id" title={`${wallet.id}`}>
 											{wallet.id}
 										</span>
 									</p>
@@ -235,13 +226,18 @@ function App() {
 							))}
 					</section>
 					<br />
-					<section className="blockpass-package-flex-center button-group">
+					<section className="blockpass-package-flex-center button-group upper-buttons">
 						<Button
 							onClick={() => setAvailableWalletModalOpen(true)}
+							className="upper-button"
 						>
 							{selected ? "+ Add more wallet" : "Connect Wallet"}
 						</Button>
-						<Button onClick={fetchCreditScore} disabled={!selected}>
+						<Button
+							onClick={fetchCreditScore}
+							disabled={!selected}
+							className="upper-button"
+						>
 							Get Credit Score
 						</Button>
 					</section>
@@ -278,15 +274,15 @@ function App() {
 								openInNewTab("https://www.google.com/");
 								setIsClickedClaim(true);
 							}}
+							className="bottom-button"
 							disabled={!creditLoaderDisplayed}
-							width="35%"
 						>
 							Claim Reputation Score
 						</Button>
 						<Button
 							disabled={!creditLoaderDisplayed}
-							width="35%"
 							onClick={nfcHandler}
+							className="bottom-button"
 						>
 							Create NFC
 						</Button>
@@ -304,10 +300,7 @@ function App() {
 					)}
 				</section>
 
-				<section
-					className="repu-card blockpass-package-right-side"
-					style={{ width: "30%" }}
-				>
+				<section className="repu-card blockpass-package-right-side">
 					<h4 className="blockpass-package-gray-header">
 						What is Karma Score?
 					</h4>

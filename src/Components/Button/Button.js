@@ -1,9 +1,9 @@
 import React from "react";
 import "./Button.css";
 
-const Button = ({ className='', width='170px', children, ...rest }) => {
+const Button = ({ className='', children, ...rest}) => {
 	return (
-		<button className={`${className} gradient-button`} {...rest} style={{width:width}} >
+		<button className={`${className} gradient-button`} {...rest}>
 			{children}
 		</button>
 	);

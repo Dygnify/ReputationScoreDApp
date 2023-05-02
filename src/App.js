@@ -6,9 +6,9 @@ import Button from "./Components/Button/Button";
 import Loader from "./Components/Loader/Loader";
 import VideoCard from "./Components/VideoCard/VideoCard";
 import PlayButton from "./Components/Button/PlayButton";
-// import { getCreditScore } from "./services/data-points";
+import { getCreditScore } from "./services/data-points";
 import { mintNFC } from "./services/nfcConnector";
-// import { sendNotification } from "./services/pushNotification"
+import { sendNotification } from "./services/pushNotification"
 import InfoModal from "./Components/Modals/InfoModal/InfoModal";
 import karma_score from "./Images/karma_score.png";
 import { QRCode } from "react-qr-svg";
@@ -159,17 +159,17 @@ function App() {
 	const fetchCreditScore = async () => {
 		setIsLoader(true);
 		setoffChainScore(713);
-		// let score = await getCreditScore(
+		let score = await getCreditScore(
 
-		// 	"0xdad4c11e8cc6a5c37808d3b31b3b284809f702d1"
+			"0xdad4c11e8cc6a5c37808d3b31b3b284809f702d1"
 
-		// );
-		setOnChainScore(564);
-		// sendNotification(
-		// 	window.ethereum.selectedAddress,
-		// 	"Your Karma score is generated Successfully",
-		// 	`Your offChain score is 713 and onChain score is ${564}`
-		// );
+		);
+		setOnChainScore(score);
+		sendNotification(
+			window.ethereum.selectedAddress,
+			"Your Karma score is generated Successfully",
+			`Your offChain score is 713 and onChain score is ${score}`
+		);
 	};
 
 	return (

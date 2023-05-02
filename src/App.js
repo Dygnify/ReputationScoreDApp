@@ -11,7 +11,7 @@ import { mintNFC } from "./services/nfcConnector";
 import { sendNotification } from "./services/pushNotification"
 import InfoModal from "./Components/Modals/InfoModal/InfoModal";
 import karma_score from "./Images/karma_score.png";
-import { QRCode } from "react-qr-svg";
+//import { QRCode } from "react-qr-svg";
 
 const data = {
 	id: "c811849d-6bfb-4d85-936e-3d9759c7f105",
@@ -296,7 +296,7 @@ function App() {
 						</Button>
 					</section>
 
-					{isClickedClaim && creditLoaderDisplayed && (
+					{/* {isClickedClaim && creditLoaderDisplayed && (
 						<section className="blockpass-package-flex-center repu-card qrcode-container">
 							<h3>Verify Your claim and get Karma Score NFC</h3>
 							<QRCode
@@ -305,7 +305,7 @@ function App() {
 								value={JSON.stringify(data)}
 							/>
 						</section>
-					)}
+					)} */}
 				</section>
 
 				<section className="repu-card blockpass-package-right-side">
